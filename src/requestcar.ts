@@ -29,6 +29,12 @@ export async function fetchCarData(manufacturer: string, model: string, searchTy
 export async function orderCarData(manufacturer: string, model: string): Promise<JSON | null> {
     const endpointURL: string = `https://carhub-api.onrender.com/data/request_wanted`
     try {
+        if (manufacturer == "") {
+            throw new Error("Order form was not filled correctly. Missing entry: manufacturer")
+        } else if (model == "") {
+            throw new Error("Order form was not filled correctly. Missing entry: model")
+        }
+
         const requestData: Response | undefined = await fetch(endpointURL, {
             method: "POST",
             headers: {
