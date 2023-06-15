@@ -18,7 +18,7 @@ func main() {
 	username := os.Args[1]
 	password := os.Args[2]
 	hostname := os.Args[3]
-	connStr := fmt.Sprintf("postgres://%s:%s@%s/cars_test?sslmode=disable", username, password, hostname)
+	connStr := fmt.Sprintf("postgres://%s:%s@%s/cars_db?sslmode=disable", username, password, hostname)
 
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
@@ -35,7 +35,7 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://localhost:8080, http://localhost:8080"},
+		AllowOrigins:     []string{"https://carhub-u7on.onrender.com/"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type"},
 		ExposeHeaders:    []string{"Content-Length"},
