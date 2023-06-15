@@ -18,7 +18,7 @@ func main() {
 	username := os.Args[1]
 	password := os.Args[2]
 	hostname := os.Args[3]
-	connStr := fmt.Sprintf("postgres://%s:%s@%s/cars_db?sslmode=disable", username, password, hostname)
+	connStr := fmt.Sprintf("postgres://%s:%s@%s/cars_db", username, password, hostname)
 
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
