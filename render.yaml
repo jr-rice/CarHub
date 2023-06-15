@@ -1,4 +1,0 @@
-routes:
-  - path: /
-    serve:
-      spa: index.html
