@@ -4,7 +4,7 @@ import elcamino from './assets/chevroletelcamino.jpg'
 import notfound from './assets/notfound.jpg'
 
 export async function fetchCarData(manufacturer: string, model: string, searchType: string): Promise<JSON | null> {
-    const endpointURL: string = `/api/data/${searchType}`
+    const endpointURL: string = `https://carhub-api.onrender.com/data/${searchType}`
     try {
         const requestData: Response | undefined = await fetch(endpointURL, {
             method: "POST",
@@ -27,7 +27,7 @@ export async function fetchCarData(manufacturer: string, model: string, searchTy
 }
 
 export async function orderCarData(manufacturer: string, model: string): Promise<JSON | null> {
-    const endpointURL: string = `/api/data/request_wanted`
+    const endpointURL: string = `https://carhub-api.onrender.com/data/request_wanted`
     try {
         const requestData: Response | undefined = await fetch(endpointURL, {
             method: "POST",
