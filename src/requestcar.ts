@@ -50,7 +50,6 @@ export async function orderCarData(manufacturer: string, model: string): Promise
 
 export function fetchListedCarImg(manufacturer: string, model: string): string {
     const listedCar = `${manufacturer} ${model}`
-
     switch (listedCar) {
         case "Ford Mustang GT":
             return mustangGT
