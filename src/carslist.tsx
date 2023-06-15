@@ -32,6 +32,7 @@ export default function CarsList(): JSX.Element {
             }
 
             const carData: JSON | null = await fetchCarData(manufacturer, model, searchType)
+            setError("")
             setCarListings(carData)
         }
 
